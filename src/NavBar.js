@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Button from '@material-ui/core/Button';
-import AppBar from '@material-ui/core/AppBar'
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
+const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+  input: {
+    display: 'none',
+  },
+}));
 
+export default function OutlinedButtons() {
+  const classes = useStyles();
 
-function App() {
   return (
-    <div className="App">
-
-      <AppBar position="relative"> 
-        <Typography aling="center" variant='H1' >
-          Hello world
-        </Typography>
-
-       
+    <div>
       <Button variant="outlined" className={classes.button}>
         Default
       </Button>
@@ -49,18 +46,6 @@ function App() {
       <Button variant="outlined" color="inherit" className={classes.button}>
         Inherit
       </Button>
-
-
-
- 
-     
-      </AppBar>
-     
-
-      <Button variant="contained" color="primary"> MaterialUI button</Button>
-      
     </div>
   );
 }
-
-export default App;
